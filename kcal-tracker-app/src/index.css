@@ -1,0 +1,415 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.topnav{
+    background-color: #333;
+    overflow: hidden;
+}
+.topnav a{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0.8rem;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.topnav a:hover {
+    color: black;
+  }
+.topnav .icon {
+    display: none;
+  }
+  @media screen and (max-width: 700px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+}
+
+/* Add user screen*/
+.add-user{
+  background-color: #fff;
+  display: block;
+  text-align: center;
+}
+
+.add-user form{
+  border: 3px solid #905BA4;
+  background-color: #5BA490;
+  padding: 1rem;
+  margin: 5rem;
+  max-width: 50%;
+  display: inline-block;
+}
+.add-user label{
+  font-weight: bold;
+}
+.add-user input[type=username],input[type=email], input[type=password]{
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+  border: 1px solid #cccccc;
+}
+
+.add-user h3{
+  text-align: center;
+  margin-top: 2rem;
+  color:#000000;
+  font-weight: 900;
+}
+
+.add-user button{
+  display: block;
+  margin: 0 auto;
+  height: 3rem;
+  width: 8rem;
+  font-weight: bold;
+}
+@media only screen and (max-width: 600px){
+  .add-user button{
+     width: auto;
+    }
+}
+
+.login-redirect{
+  justify-content: center;
+  text-align: right;
+}
+.login-redirect li{
+  text-decoration: none;
+  list-style: none;
+}
+.login-redirect a{
+  text-decoration: none;
+  color: #fff;
+}
+/* Add food screen */
+
+.add-product{
+  background-color: #fff;
+}
+.add-product form{
+  border: 3px solid #905BA4;
+  background-color: #5BA490;
+  padding: 1rem;
+  margin: 5rem;
+}
+.add-product label{
+  font-weight: bold;
+}
+.add-product h3{
+  text-align: center;
+  margin-top: 2rem;
+  color: #000;
+  font-weight: bold;
+}
+.add-product input[type=text]{
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+  border: 1px solid #cccccc;
+}
+.add-product input[type=submit]{
+  display: block;
+  margin: 0 auto;
+  height: 3rem;
+  width: 8rem;
+  font-weight: bold;
+}
+@media only screen and (max-width: 600px){
+  .add-product input[type=submit]{
+     width: auto;
+    }
+}
+
+/* Edit food screen */
+.edit-product{
+  background-color: #fff;
+}
+.edit-product form{
+  border: 3px solid #905BA4;
+  background-color: #5BA490;
+  padding: 1rem;
+  margin: 5rem;
+}
+.edit-product label{
+  font-weight: bold;
+}
+
+.edit-product input[type=text]{
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+  border: 1px solid #cccccc;
+}
+
+.edit-product h3{
+  text-align: center;
+  margin-top: 2rem;
+  color:#000000;
+  font-weight: 900;
+}
+
+.edit-product input[type=submit]{
+  display: block;
+  margin: 0 auto;
+  height: 3rem;
+  width: 10rem;
+  font-weight: bold;
+}
+@media only screen and (max-width: 600px){
+  .edit-product input[type=submit]{
+     width: auto;
+    }
+}
+
+/* Macro-calculator screen */
+.macro-calculator{
+  background-color: #fff;
+  display: block;
+  text-align: center;
+}
+.macro-calculator form{
+  border: 3px solid #905BA4;
+  background-color: #5BA490;
+  padding: 1rem;
+  margin: 5rem;
+  max-width: 75%;
+  display: inline-block;
+}
+.macro-calculator label{
+  font-weight: bold;
+}
+.macro-calculator h3{
+  text-align: center;
+  margin-top: 2rem;
+  color:#000000;
+  font-weight: 900;
+}
+
+.macro-calculator input[type=number], select{
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+  border: 1px solid #cccccc;
+}
+.macro-calculator input[type=button]{
+  display: block;
+  margin: 0 auto;
+  height: 3rem;
+  width: 10rem;
+  font-weight: bold;
+}
+.macro-calculator-container input[type=radio]{
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.macro-calculator .result{
+  display: none;
+}
+
+/* Food screen */
+.product-list h3{
+    text-align: center;
+    margin-top: 2rem;
+    color:#000000;
+    font-weight: 900;
+    padding-bottom: 2.5rem;
+  }
+table.table {
+    border: 2px solid #FFFFFF;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  table.table td, table.table th {
+    border: 1px solid #FFFFFF;
+    padding: 0.1rem 0.2rem;
+  }
+  table.table tbody td {
+    font-size: 1rem;
+  }
+  table.table td:nth-child(even) {
+    background: #EBEBEB;
+  }
+  table.table thead {
+    background: #FFFFFF;
+    border-bottom: 4px solid #333333;
+  }
+  table.table thead th {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    border-left: 2px solid #333333;
+  }
+  table.table thead th:first-child {
+    border-left: none;
+  }
+  
+  .edit-btn{
+    background-color: blue;
+  }
+  .edit-btn a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .delete-btn{
+    background-color: red;
+  }
+  .delete-btn a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .btn-add-item{
+    border: none;
+    color: green;
+    background-color: #fff;
+    font-weight: 900;
+    font-size: large;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+.btn-add-item-popup{
+  border: none;
+  color: green;
+  background-color: #fff;
+  font-weight: 900;
+  font-size: large;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+  
+/* Login screen*/
+.login-user{
+    display: block;
+    text-align: center;
+}
+.login-user form{
+  border: 3px solid #905BA4;
+  background-color: #5BA490;
+  padding: 1rem;
+  margin: 5rem;
+  max-width: 50%;
+  display: inline-block;
+  
+}
+
+.login-user label{
+  font-weight: bold;
+}
+
+.login-user h3{
+  text-align: center;
+  margin-top: 2rem;
+  color:#000000;
+  font-weight: 900;
+}
+
+.login-user input[type=username], input[type=password]{
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem 0;
+  display: inline-block;
+  border: 1px solid #cccccc;
+}
+
+.login-user button{
+  display: block;
+  margin: 0 auto;
+  height: 3rem;
+  width: 8rem;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px){
+    .login-user button{
+       width: auto;
+      }
+}
+
+.login-redirect{
+  justify-content: center;
+  text-align: right;
+}
+.login-redirect li{
+  text-decoration: none;
+  list-style: none;
+}
+.login-redirect a{
+  text-decoration: none;
+  color: #fff;
+}
+
+/* List Screen */
+.list-items h3{
+    text-align: center;
+    margin-top: 2rem;
+    color:#000000;
+    font-weight: 900;
+    padding-bottom: 2.5rem;
+  }
+table.list-table {
+    border: 1px solid #FFFFFF;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  table.list-table td, table.list-table th {
+    border: 1px solid #FFFFFF;
+    padding: 0.2rem 0.1rem;
+  }
+  table.list-table tbody td {
+    font-size: 1rem;
+  }
+  table.list-table tr:nth-child(even) {
+    background: #D0E4F5;
+  }
+  table.list-table thead {
+    background: #0B6FA4;
+    border-bottom: 5px solid #FFFFFF;
+  }
+  table.list-table thead th {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #FFFFFF;
+  }
+  table.list-table thead th:first-child {
+    border-left: none;
+  }
+  table.list-table .button-rmv{
+    border: none;
+    color: red;
+    background-color: #fff;
+    font-weight: 900;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
