@@ -17,7 +17,7 @@ function ListScreen(props) {
     const{ lunchList } = lList;
 
     const dList = useSelector(state => state.dList);
-    const { dinerList } = dList; 
+    const { dinerList} = dList; 
 
     const dispatch = useDispatch();
 
@@ -67,6 +67,27 @@ function ListScreen(props) {
                             
                         )}
                 </table>
+                <div >
+            <h3>
+                Total-breakfast:
+            </h3>
+            <table className='list-table'>
+                <thead>
+                    <tr>
+                        <th>Kcal</th>
+                        <th>Protein</th>
+                        <th>Fats</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>{(breakfastList.reduce((b, d) => b + d.kcal * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(breakfastList.reduce((b, d) => b + d.protein * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(breakfastList.reduce((b, d) => b + d.fats * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(breakfastList.reduce((b, d) => b + d.carbs * d.weight/100, 0)).toFixed(2)}</td>
+                </tbody>
+            </table>
+        </div>
                 <h3>
                         Lunch
                     </h3>
@@ -99,6 +120,27 @@ function ListScreen(props) {
                             
                         )}
                 </table>
+                <div >
+            <h3>
+                Total-lunch:
+            </h3>
+            <table className='list-table'>
+                <thead>
+                    <tr>
+                        <th>Kcal</th>
+                        <th>Protein</th>
+                        <th>Fats</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>{(lunchList.reduce((b, d) => b + d.kcal * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(lunchList.reduce((b, d) => b + d.protein * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(lunchList.reduce((b, d) => b + d.fats * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(lunchList.reduce((b, d) => b + d.carbs * d.weight/100, 0)).toFixed(2)}</td>
+                </tbody>
+            </table>
+        </div>
                 <h3>
                         Diner
                     </h3>
@@ -131,6 +173,27 @@ function ListScreen(props) {
                             
                         )}
                 </table>
+                <div >
+            <h3>
+                Total-diner:
+            </h3>
+            <table className='list-table'>
+                <thead>
+                    <tr>
+                        <th>Kcal</th>
+                        <th>Protein</th>
+                        <th>Fats</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>{(dinerList.reduce((b, d) => b + d.kcal * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(dinerList.reduce((b, d) => b + d.protein * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(dinerList.reduce((b, d) => b + d.fats * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(dinerList.reduce((b, d) => b + d.carbs * d.weight/100, 0)).toFixed(2)}</td>
+                </tbody>
+            </table>
+        </div>
                 
                 <h3>
                         Snacks
@@ -152,7 +215,7 @@ function ListScreen(props) {
                             <tbody key={item.id}>
                                 <tr>
                                 <td>{item.name}</td>
-                                <td  key={item.id}>{item.weight}{<Popup  key={item.id} trigger={<button>Change</button>} ><input  key={item.id} onInput={(e) => dispatch(updateCart(item.product,e.target.value))}></input></Popup>} </td>
+                                <td  key={item.id}>{item.weight}{<Popup  key={item.id} trigger={<button> Change</button>} ><input  key={item.id} onInput={(e) => dispatch(updateCart(item.product,e.target.value))}></input></Popup>} </td>
                                 <td>{item.weight / 100 * item.kcal}</td>
                                 <td>{item.weight / 100 * item.protein}</td>
                                 <td>{item.weight / 100 * item.fats}</td>
@@ -164,6 +227,27 @@ function ListScreen(props) {
                             
                         )}
                 </table>
+                <div >
+            <h3>
+                Total-snacks:
+            </h3>
+            <table className='list-table'>
+                <thead>
+                    <tr>
+                        <th>Kcal</th>
+                        <th>Protein</th>
+                        <th>Fats</th>
+                        <th>Carbs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td>{(snackList.reduce((a, c) => a + c.kcal*c.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(snackList.reduce((a, c) => a + c.protein*c.weight/100 , 0)).toFixed(2)}</td>
+                    <td>{(snackList.reduce((a, c) => a + c.fats*c.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(snackList.reduce((a, c) => a + c.carbs*c.weight/100, 0)).toFixed(2)}</td>
+                </tbody>
+            </table>
+        </div>
         <div >
             <h3>
                 Total:
@@ -178,10 +262,10 @@ function ListScreen(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    <td>{snackList.reduce((a, c) => a + c.kcal*c.weight/100, 0) + breakfastList.reduce((b, d) => b + d.kcal * d.weight/100, 0) + lunchList.reduce((b, d) => b + d.kcal * d.weight/100, 0) + dinerList.reduce((b, d) => b + d.kcal * d.weight/100, 0)}</td>
-                    <td>{snackList.reduce((a, c) => a + c.protein*c.weight/100 , 0) + breakfastList.reduce((b, d) => b + d.protein * d.weight/100, 0 + lunchList.reduce((b, d) => b + d.protein * d.weight/100, 0)) + dinerList.reduce((b, d) => b + d.protein * d.weight/100, 0)}</td>
-                    <td>{snackList.reduce((a, c) => a + c.fats*c.weight/100, 0) + breakfastList.reduce((b, d) => b + d.fats * d.weight/100, 0) + lunchList.reduce((b, d) => b + d.fats * d.weight/100, 0) + dinerList.reduce((b, d) => b + d.fats * d.weight/100, 0)}</td>
-                    <td>{snackList.reduce((a, c) => a + c.carbs*c.weight/100, 0) + breakfastList.reduce((b, d) => b + d.carbs * d.weight/100, 0) + lunchList.reduce((b, d) => b + d.carbs * d.weight/100, 0) + dinerList.reduce((b, d) => b + d.carbs * d.weight/100, 0)}</td>
+                    <td>{(snackList.reduce((a, c) => a + c.kcal*c.weight/100, 0) + breakfastList.reduce((b, d) => b + d.kcal * d.weight/100, 0) + lunchList.reduce((b, d) => b + d.kcal * d.weight/100, 0) + dinerList.reduce((b, d) => b + d.kcal * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(snackList.reduce((a, c) => a + c.protein*c.weight/100 , 0) + breakfastList.reduce((b, d) => b + d.protein * d.weight/100, 0 + lunchList.reduce((b, d) => b + d.protein * d.weight/100, 0)) + dinerList.reduce((b, d) => b + d.protein * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(snackList.reduce((a, c) => a + c.fats*c.weight/100, 0) + breakfastList.reduce((b, d) => b + d.fats * d.weight/100, 0) + lunchList.reduce((b, d) => b + d.fats * d.weight/100, 0) + dinerList.reduce((b, d) => b + d.fats * d.weight/100, 0)).toFixed(2)}</td>
+                    <td>{(snackList.reduce((a, c) => a + c.carbs*c.weight/100, 0) + breakfastList.reduce((b, d) => b + d.carbs * d.weight/100, 0) + lunchList.reduce((b, d) => b + d.carbs * d.weight/100, 0) + dinerList.reduce((b, d) => b + d.carbs * d.weight/100, 0)).toFixed(2)}</td>
                 </tbody>
             </table>
         </div>
